@@ -4,6 +4,7 @@ import { AccountModule } from '../account/account.module';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,6 +16,7 @@ import { HomeComponent } from './home/home.component';
   imports: [
     CommonModule,
     AccountModule,
+    RouterModule,
     NgbModule
   ],
   exports: [

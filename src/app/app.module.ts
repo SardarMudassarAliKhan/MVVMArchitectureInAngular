@@ -22,7 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DeveloperModule,
     PublicUserModule,
     AccountModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     provideClientHydration()
