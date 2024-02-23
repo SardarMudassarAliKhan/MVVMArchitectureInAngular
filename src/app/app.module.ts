@@ -8,6 +8,7 @@ import { ManagerModule } from './manager/manager.module';
 import { DeveloperModule } from './developer/developer.module';
 import { PublicUserModule } from './public-user/public-user.module';
 import { AccountModule } from './account/account.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AccountModule } from './account/account.module';
     ManagerModule,
     DeveloperModule,
     PublicUserModule,
-    AccountModule
+    AccountModule,
+    NgbModule
   ],
   providers: [
     provideClientHydration()

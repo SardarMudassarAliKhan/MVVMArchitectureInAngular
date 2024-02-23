@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from '../core/core.module';
 import { AccountModule } from '../account/account.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -10,7 +11,8 @@ import { AccountModule } from '../account/account.module';
   imports: [
     CommonModule,
     CoreModule,
-    AccountModule
+    AccountModule,
+    NgbModule
   ]
 })
 export class ManagerModule { }
