@@ -3,6 +3,11 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { ManagerModule } from './manager/manager.module';
+import { DeveloperModule } from './developer/developer.module';
+import { PublicUserModule } from './public-user/public-user.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +15,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule,
+    ManagerModule,
+    DeveloperModule,
+    PublicUserModule,
+    AccountModule
   ],
   providers: [
     provideClientHydration()
