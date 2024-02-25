@@ -9,6 +9,7 @@ import { DeveloperModule } from './developer/developer.module';
 import { PublicUserModule } from './public-user/public-user.module';
 import { AccountModule } from './account/account.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PublicUserModule,
     AccountModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration()

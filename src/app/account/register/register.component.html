@@ -1,1 +1,58 @@
-<p>register works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title text-center">Register</h3>
+          <form (ngSubmit)="register()" #contactForm="ngForm">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control" name="username" [(ngModel)]="registerForm.username" id="username" required placeholder="Enter your username">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="phoneNo" class="form-label">Phone Number</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                <input type="tel" class="form-control" name="phoneNo" [(ngModel)]="registerForm.phoneNo" id="phoneNo" required placeholder="Enter your phone number">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control" name="email" [(ngModel)]="registerForm.email" id="email" required placeholder="Enter your email address">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                <input type="password" class="form-control" name="password" [(ngModel)]="registerForm.password" id="password" required placeholder="Enter your password">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="shopName" class="form-label">Shop Name</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-shop"></i></span>
+                <input type="text" class="form-control" name="shopName" [(ngModel)]="registerForm.shopName" id="shopName" required placeholder="Enter your shop name">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="businessType" class="form-label">Business Type</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-building"></i></span>
+                <input type="text" class="form-control" name="businessType" [(ngModel)]="registerForm.businessType" id="businessType" required placeholder="Enter your business type">
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

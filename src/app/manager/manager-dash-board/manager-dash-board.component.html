@@ -1,0 +1,88 @@
+<nav class="navbar navbar-dark bg-dark sidebar">
+  <div class="container-fluid">
+    <div class="navbar-nav">
+      <a class="nav-link" href="" routerLink="/manager/ManagerDashBoard">Tasks</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Content -->
+<div class="container mt-3">
+  <div class="row">
+    <!-- New Tasks Column -->
+    <div class="col-md-4">
+      <h3>New Tasks</h3>
+      <div class="card mb-3" *ngFor="let task of TaskDetails" [ngClass]="{'bg-primary': task.isCompleted === 'false', 'bg-warning': task.priority === 'medium', 'bg-info': task.priority === 'low'}">
+        <div class="card-body">
+          <h5 class="card-title">{{ task.title }}</h5>
+          <p class="card-text">{{ task.description }}</p>
+          <p class="card-text">Assigned To: {{ task.userName }}</p>
+        </div>
+      </div>
+    </div>
+    <!-- In Progress Tasks Column -->
+    <div class="col-md-4">
+      <h3>In Progress Tasks</h3>
+      <div class="card mb-3" *ngFor="let task of TaskDetails" [ngClass]="{'bg-primary': task.isCompleted === 'true', 'bg-warning': task.priority === 'medium', 'bg-info': task.priority === 'low'}">
+        <div class="card-body">
+          <h5 class="card-title">{{ task.title }}</h5>
+          <p class="card-text">{{ task.description }}</p>
+          <p class="card-text">Assigned To: {{ task.userName }}</p>
+        </div>
+      </div>
+    </div>
+    <!-- Complete Tasks Column -->
+    <div class="col-md-4">
+      <h3>Complete Tasks</h3>
+      <div class="card mb-3" *ngFor="let task of TaskDetails" [ngClass]="{'bg-primary': task.priority === 'high', 'bg-warning': task.priority === 'medium', 'bg-info': task.priority === 'low'}">
+        <div class="card-body">
+          <h5 class="card-title">{{ task.title }}</h5>
+          <p class="card-text">{{ task.description }}</p>
+          <p class="card-text">Assigned To: {{ task.userName }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Task Button -->
+<!-- Add Task Button -->
+<div class="container mt-3">
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">Add Task</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addTaskModalLabel">Add Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Add Task Form -->
+        <div class="container mt-5">
+          <h2 class="text-center mb-4">Create Task</h2>
+          <form (ngSubmit)="AddTask()" #contactForm="ngForm">
+            <div class="mb-3">
+              <label for="userName" class="form-label">User Name</label>
+              <input type="text" class="form-control" name="userName" [(ngModel)]="addTaskForm.userName" id="userName" placeholder="Enter user name">
+            </div>
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" name="title" [(ngModel)]="addTaskForm.title" placeholder="Enter title">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" name="description" [(ngModel)]="addTaskForm.description" rows="3" placeholder="Enter description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
